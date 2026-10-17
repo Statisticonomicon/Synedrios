@@ -1,0 +1,17 @@
+.git
+.gitignore
+.env
+data/
+tests/
+docs/
+.planning/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+README.md
+README.txt
+HANDOVER.md
+CLAUDE.md

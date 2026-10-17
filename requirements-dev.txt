@@ -1,0 +1,18 @@
+# Development and CI tooling — NOT shipped in the runtime Docker image.
+#
+# Install AFTER the runtime deps, as a separate command, because
+# requirements.txt is hash-locked and pip refuses to mix hashed and unhashed
+# packages in one install:
+#   pip install --require-hashes -r requirements.txt
+#   pip install -r requirements-dev.txt
+
+pytest>=7.4
+pytest-asyncio>=0.23
+pytest-cov>=5.0
+ruff>=0.15
+mypy>=2.3
+pip-audit>=2.7
+pip-licenses>=5.0
+detect-secrets>=1.5
+pre-commit>=3.7
+pip-tools>=7.4

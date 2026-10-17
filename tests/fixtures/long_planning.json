@@ -1,0 +1,402 @@
+[
+  {
+    "speaker": "Nikos",
+    "content": "Welcome everyone. This is the Q3 roadmap planning session. Goal today: agree the top three initiatives and rough owners."
+  },
+  {
+    "speaker": "Priya",
+    "content": "Before we dive in, can we timebox? I have a hard stop in an hour."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Yes, one hour. We'll spend twenty minutes on candidates, twenty on prioritisation, twenty on owners and risks."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "Sounds good. I'll capture decisions as we go."
+  },
+  {
+    "speaker": "Mike",
+    "content": "I've got three candidate initiatives from engineering: the billing rewrite, the mobile app, and the data platform."
+  },
+  {
+    "speaker": "Tom",
+    "content": "Sales is pushing hard for the mobile app. Three of our biggest accounts asked for it last quarter."
+  },
+  {
+    "speaker": "Nadia",
+    "content": "Support would vote for the billing rewrite. Billing errors are our number one ticket driver right now."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Let's get all candidates on the table first, then prioritise. Mike, expand on the billing rewrite."
+  },
+  {
+    "speaker": "Mike",
+    "content": "The current billing system is a tangle of cron jobs. It's brittle, hard to change, and it's blocking three other features."
+  },
+  {
+    "speaker": "Nadia",
+    "content": "From support's side, customers get double-charged maybe twice a month. Each incident is hours of manual cleanup."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "That double-charging issue — is there a quick fix, or does it genuinely need the rewrite?"
+  },
+  {
+    "speaker": "Mike",
+    "content": "There's a band-aid, but the root cause is the architecture. A real fix means the rewrite."
+  },
+  {
+    "speaker": "Priya",
+    "content": "What's the rough size of the billing rewrite?"
+  },
+  {
+    "speaker": "Mike",
+    "content": "Two engineers for most of the quarter. Call it ten engineer-weeks."
+  },
+  {
+    "speaker": "Tom",
+    "content": "The mobile app is bigger revenue upside though. Those three accounts are worth a lot of annual recurring revenue."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Tom, can you put a number on the mobile app opportunity?"
+  },
+  {
+    "speaker": "Tom",
+    "content": "Conservatively, retaining those three accounts is a big chunk of next year's renewal. Plus it opens a new segment."
+  },
+  {
+    "speaker": "Priya",
+    "content": "And the cost? Mobile is a different skill set than we have in-house."
+  },
+  {
+    "speaker": "Mike",
+    "content": "Right, we'd need to either hire or contract. That's a hiring lead time of two to three months."
+  },
+  {
+    "speaker": "Nadia",
+    "content": "If we do mobile first, billing stays broken all quarter and support keeps bleeding."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "Let me note the tension: mobile is revenue upside but slow to start; billing is cost-saving and ready to go."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Good framing. What about the data platform, Mike?"
+  },
+  {
+    "speaker": "Mike",
+    "content": "The data platform is foundational. It unblocks analytics, ML, and better reporting for everyone."
+  },
+  {
+    "speaker": "Priya",
+    "content": "Foundational is the problem though. It's the kind of project that's hard to justify on its own this quarter."
+  },
+  {
+    "speaker": "Tom",
+    "content": "Sales can't sell a data platform. We can sell a mobile app."
+  },
+  {
+    "speaker": "Nadia",
+    "content": "Support can't deflect tickets with a data platform either, at least not this quarter."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "So the data platform is important but maybe not urgent. Let's park it as a candidate and revisit."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "Parked: data platform, important-not-urgent, revisit in Q4 planning."
+  },
+  {
+    "speaker": "Priya",
+    "content": "Okay so realistically it's billing versus mobile for the top slot."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Let's do a quick prioritisation pass. I'll use impact, effort, and time-to-value."
+  },
+  {
+    "speaker": "Mike",
+    "content": "Billing: high impact on cost and reliability, medium effort, fast time-to-value."
+  },
+  {
+    "speaker": "Tom",
+    "content": "Mobile: high impact on revenue, high effort, slow time-to-value because of hiring."
+  },
+  {
+    "speaker": "Priya",
+    "content": "On those numbers, billing wins on time-to-value clearly."
+  },
+  {
+    "speaker": "Tom",
+    "content": "But mobile wins on strategic upside. We can't keep deferring it or we lose the accounts."
+  },
+  {
+    "speaker": "Nadia",
+    "content": "Could we sequence them? Billing this quarter, start mobile hiring in parallel?"
+  },
+  {
+    "speaker": "Nikos",
+    "content": "That's interesting. The hiring lead time for mobile is dead time anyway."
+  },
+  {
+    "speaker": "Mike",
+    "content": "Yes — if we start recruiting mobile engineers now, they onboard just as billing wraps."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "So proposed sequence: billing rewrite as the Q3 deliverable, mobile hiring kicks off in parallel immediately."
+  },
+  {
+    "speaker": "Priya",
+    "content": "I like that. It uses the hiring lead time instead of wasting it."
+  },
+  {
+    "speaker": "Tom",
+    "content": "I can live with that if we commit to a real mobile start date. I don't want it to slip forever."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Fair. Let's set a checkpoint: mobile development starts at the beginning of Q4, non-negotiable."
+  },
+  {
+    "speaker": "Tom",
+    "content": "Good. I'll set expectations with the three accounts that mobile lands early next year."
+  },
+  {
+    "speaker": "Nadia",
+    "content": "And billing improvements ship this quarter, which I can communicate to the noisiest customers."
+  },
+  {
+    "speaker": "Mike",
+    "content": "One risk: the two engineers for billing are also the only two who know the payments integration."
+  },
+  {
+    "speaker": "Priya",
+    "content": "That's a bus-factor risk. If either gets pulled onto an incident, billing slips."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Mitigation? Can we cross-train a third engineer partway through?"
+  },
+  {
+    "speaker": "Mike",
+    "content": "We can pair a third engineer in from week three to spread the knowledge. Slight cost to velocity."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "Risk noted: billing bus-factor, mitigation is to pair in a third engineer from week three."
+  },
+  {
+    "speaker": "Priya",
+    "content": "What about the mobile hiring risk? Two to three months is optimistic in this market."
+  },
+  {
+    "speaker": "Tom",
+    "content": "If hiring slips, the Q4 start slips. That's the real schedule risk."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Can we de-risk hiring by lining up a contractor as a fallback?"
+  },
+  {
+    "speaker": "Mike",
+    "content": "Yes, a contractor bridge would let us start Q4 even if full-time hiring runs late."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "Risk noted: mobile hiring may slip, mitigation is a contractor bridge to protect the Q4 start."
+  },
+  {
+    "speaker": "Nadia",
+    "content": "Should we also budget some support engineering time for the billing migration cutover?"
+  },
+  {
+    "speaker": "Mike",
+    "content": "Good call. Cutover weekends will generate tickets. We should have support on standby."
+  },
+  {
+    "speaker": "Nadia",
+    "content": "I'll schedule a support rota for the cutover weekend once we know the date."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Let's pin a tentative cutover for the last week of the quarter, with a fallback the week after."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "Tentative billing cutover: last week of Q3, fallback first week of Q4."
+  },
+  {
+    "speaker": "Priya",
+    "content": "On owners — who owns billing end to end?"
+  },
+  {
+    "speaker": "Mike",
+    "content": "I'll own the billing rewrite. Two engineers under me, third paired in from week three."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Mike owns billing. Who owns the mobile hiring track?"
+  },
+  {
+    "speaker": "Priya",
+    "content": "I can own mobile hiring with recruiting. I'll drive the pipeline and the contractor fallback."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Priya owns mobile hiring. Tom, you own the account communication for both."
+  },
+  {
+    "speaker": "Tom",
+    "content": "Agreed. I'll own messaging to the three accounts and the broader sales narrative."
+  },
+  {
+    "speaker": "Nadia",
+    "content": "I'll own the support readiness for the billing cutover — rota, runbook, and customer comms."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "Owners captured: Mike billing, Priya mobile hiring, Tom account comms, Nadia support readiness."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Excellent. Let's talk budget briefly. Does the contractor fallback fit this quarter's budget?"
+  },
+  {
+    "speaker": "Priya",
+    "content": "A contractor bridge is within the contingency budget if we only trigger it on a hiring slip."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Good. So it's a conditional spend, not a committed one."
+  },
+  {
+    "speaker": "Priya",
+    "content": "Correct. Committed spend is the two billing engineers and recruiting fees."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "Budget note: committed spend is billing engineers plus recruiting; contractor is conditional contingency."
+  },
+  {
+    "speaker": "Mike",
+    "content": "One more dependency: the billing rewrite needs the new payments API key from finance."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Who chases finance for the payments API key?"
+  },
+  {
+    "speaker": "Mike",
+    "content": "I'll chase finance, but it helps if it comes from you, Nikos, for priority."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "I'll send the request to finance today and copy you, Mike."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "Action: Nikos requests the payments API key from finance today, Mike copied."
+  },
+  {
+    "speaker": "Mike",
+    "content": "Two plus the paired third from week three is the right size. Three from day one is overkill."
+  },
+  {
+    "speaker": "Tom",
+    "content": "From a sales view, I just need the billing reliability message to be true by quarter end."
+  },
+  {
+    "speaker": "Nadia",
+    "content": "And from support, fewer billing tickets by quarter end is the success metric."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Let's define success metrics explicitly. Billing: reduce billing tickets by half by quarter end."
+  },
+  {
+    "speaker": "Nadia",
+    "content": "Half is achievable if the double-charge root cause is fixed. I'll baseline current ticket volume."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "Success metric: halve billing tickets by end of Q3, baseline owned by Nadia."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Mobile success metric for Q3 is just a staffed team ready to start Q4. Agreed?"
+  },
+  {
+    "speaker": "Priya",
+    "content": "Agreed. Q3 mobile success is a hired or contracted team ready for a Q4 kickoff."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "Success metric: mobile team staffed and ready for Q4 start by end of Q3."
+  },
+  {
+    "speaker": "Tom",
+    "content": "Can we add a soft metric — no account churn from the three at-risk accounts this quarter?"
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Yes, retention of the three accounts through Q3 is a shared metric for you and me, Tom."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "Success metric: retain all three at-risk accounts through Q3, shared Tom and Nikos."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Let me synthesise. Q3: ship the billing rewrite, start mobile hiring in parallel, park the data platform."
+  },
+  {
+    "speaker": "Mike",
+    "content": "Owners: me on billing, Priya on hiring, Tom on accounts, Nadia on support readiness."
+  },
+  {
+    "speaker": "Nadia",
+    "content": "Metrics: halve billing tickets, staff the mobile team, retain the three accounts."
+  },
+  {
+    "speaker": "Tom",
+    "content": "Risks: billing bus-factor and mobile hiring slip, both with mitigations."
+  },
+  {
+    "speaker": "Priya",
+    "content": "And the Q4 mobile start is a hard commitment, not a soft hope."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Any objections to that plan as stated? Last chance."
+  },
+  {
+    "speaker": "Sarah",
+    "content": "None from me. I have it all captured."
+  },
+  {
+    "speaker": "Mike",
+    "content": "No objections."
+  },
+  {
+    "speaker": "Tom",
+    "content": "No objections, provided the Q4 start holds."
+  },
+  {
+    "speaker": "Nadia",
+    "content": "No objections."
+  },
+  {
+    "speaker": "Priya",
+    "content": "Agreed. Good session."
+  },
+  {
+    "speaker": "Nikos",
+    "content": "Then we're decided. Sarah will circulate the notes and action items by end of day. Thanks everyone."
+  }
+]

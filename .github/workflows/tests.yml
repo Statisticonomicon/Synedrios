@@ -1,0 +1,63 @@
+name: Tests
+
+# Runs the unit and component suite (no API calls, no Slack) on every push and
+# PR. Integration tests are excluded — they require real API keys and are run
+# manually before a release with `pytest --run-integration`.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Unit & Component Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        # Runtime deps are hash-locked; dev tools install separately because pip
+        # will not mix hashed and unhashed packages in one command.
+        run: |
+          pip install --require-hashes -r requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Run tests with coverage
+        run: |
+          pytest tests/ --ignore=tests/test_integration.py \
+            --cov=src --cov-report=term-missing
+
+  lint:
+    name: Lint & Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install tools
+        run: |
+          pip install --require-hashes -r requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Ruff lint
+        run: ruff check src/ tests/ tools/
+
+      - name: Ruff format check
+        run: ruff format --check src/ tests/ tools/
+
+      - name: Mypy
+        run: mypy src/ tools/

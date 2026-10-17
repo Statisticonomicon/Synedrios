@@ -1,0 +1,10 @@
+[
+  {"speaker": "Nikos", "content": "We need to decide on the database for the new service today."},
+  {"speaker": "Sarah", "content": "I've looked at both. PostgreSQL fits our relational query patterns better."},
+  {"speaker": "Mike", "content": "Agreed. MongoDB would force us to denormalise everything."},
+  {"speaker": "Nikos", "content": "Any objections to PostgreSQL?"},
+  {"speaker": "Sarah", "content": "None from me."},
+  {"speaker": "Mike", "content": "None."},
+  {"speaker": "Nikos", "content": "Decided. PostgreSQL it is. Sarah, can you draft the migration plan by Friday?"},
+  {"speaker": "Sarah", "content": "Yes, I'll have it ready by Friday."}
+]

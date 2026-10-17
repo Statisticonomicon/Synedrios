@@ -1,0 +1,16 @@
+services:
+  synedrios:
+    build: .
+    volumes:
+      - synedrios-data:/app/data
+    env_file:
+      - .env
+    restart: unless-stopped
+
+volumes:
+  # Volume names are pinned to the compose project name that created them.
+  # Without this, renaming the project directory changes the project name,
+  # Compose looks for differently-prefixed volumes, finds none, and silently
+  # creates empty ones — orphaning the real data.
+  synedrios-data:
+    name: synedrios_synedrios-data

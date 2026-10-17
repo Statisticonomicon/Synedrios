@@ -1,0 +1,133 @@
+# Environment
+.env
+*.env
+!.env.example
+
+# Data and databases
+# `/data` (no trailing slash) also matches the symlink used to point the data
+# directory at a fast disk — a trailing-slash pattern only matches directories,
+# and committing the symlink would embed a machine-specific absolute path.
+/data
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+venv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / local tooling
+.idea/
+.vscode/
+*.swp
+.claude/settings.local.json
+
+
+# ── Appended 2026-08-29: defensive baseline (existing rules above left untouched) ──
+.env.*
+!.env.template
+!.env.sample
+# Re-state the exception from the block above: later patterns win, and
+# `.env.*` here was silently re-ignoring the documented example file.
+!.env.example
+/env
+/env.local
+/env.production
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.asc
+*.gpg
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+*.ppk
+.netrc
+.npmrc
+.pypirc
+.htpasswd
+password
+passwords
+password.txt
+passwords.txt
+*password*.txt
+*password*.json
+*password*.yml
+*password*.yaml
+*password*.csv
+*passwd*.txt
+secrets
+secrets.txt
+*secret*.txt
+*secret*.json
+*secret*.yml
+*secret*.yaml
+# "secretary" contains "secret": the patterns above must not swallow project
+# source (this bit the initial commit — 4 of 5 roles landed). Directory-scoped
+# un-ignores beat a basename exception: they also cover future role variants
+# (secretary_v2.yml) and fixtures. detect-secrets guards actual key material.
+!config/modes/*.yml
+!tests/fixtures/*.json
+client_secret*.json
+*credentials*.json
+*credential*.txt
+# Case-insensitive variants: git patterns are case-sensitive on Linux, and a
+# real "Slack Credentials ... .txt" note with a capital C reached a commit
+# before these lines existed (amended out before any push).
+*[Cc]redential*
+*[Tt]okens*
+*[Tt]oken\ *
+*\ [Tt]oken*
+service-account*.json
+# Scoped to credential-like extensions (2026-09-02): the previous bare
+# catch-alls also swallowed reviewed source/docs ABOUT keys, e.g.
+# docs/api-keys-and-scopes.md or src/llm/apikey_rotation.py.
+*[Aa][Pp][Ii]?[Kk][Ee][Yy]*.txt
+*[Aa][Pp][Ii]?[Kk][Ee][Yy]*.json
+*[Aa][Pp][Ii]?[Kk][Ee][Yy]*.yml
+*[Aa][Pp][Ii]?[Kk][Ee][Yy]*.yaml
+*[Aa][Pp][Ii]?[Kk][Ee][Yy]*.csv
+*[Aa][Pp][Ii][Kk][Ee][Yy]*.txt
+*[Aa][Pp][Ii][Kk][Ee][Yy]*.json
+*[Aa][Pp][Ii][Kk][Ee][Yy]*.yml
+*[Aa][Pp][Ii][Kk][Ee][Yy]*.yaml
+*[Aa][Pp][Ii][Kk][Ee][Yy]*.csv
+*.token
+.aws/
+.ssh/
+.gnupg/
+.kube/
+*.dump
+*.sqlite
+*.sqlite3
+*.bak
+*.backup
+backups/
+*.tar.gz
+*.tgz
+/models/
+hf-cache/
+.cache/
+uploads/
+/logs/
+*.log
+node_modules/
+/tmp/
+*~

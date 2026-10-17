@@ -1,0 +1,17 @@
+[
+  {"speaker": "Nikos", "content": "Morning everyone, let's run the standup. Sarah, want to kick us off?"},
+  {"speaker": "Sarah", "content": "Sure. Yesterday I finished the migration script for the user table. Today I'm writing the rollback path. No blockers."},
+  {"speaker": "Mike", "content": "I shipped the caching layer for the search endpoint. Today I'll add metrics around it. I'm blocked on the staging credentials though."},
+  {"speaker": "Nikos", "content": "Mike, I'll get you the staging credentials right after this — I'll send them by 10am."},
+  {"speaker": "Priya", "content": "I reviewed the two open pull requests and left comments. Today I'm pairing with Tom on the notifications service."},
+  {"speaker": "Tom", "content": "Yep, and separately I'm still chasing the flaky integration test. I think it's a timing issue in the fixture setup."},
+  {"speaker": "Nikos", "content": "Tom, how long do you think the flaky test will take to nail down?"},
+  {"speaker": "Tom", "content": "Probably half a day. If I can't fix it by end of today I'll quarantine it and open a ticket."},
+  {"speaker": "Sarah", "content": "On the migration — do we want to run it against production this Friday or wait for next sprint?"},
+  {"speaker": "Nikos", "content": "Let's target Friday, but only if the rollback path is tested. Sarah, can you have the rollback tested by Thursday?"},
+  {"speaker": "Sarah", "content": "Yes, Thursday works. I'll have the rollback tested and demoed by Thursday afternoon."},
+  {"speaker": "Mike", "content": "Once I have credentials I should finish the metrics work today, so I can help with the Friday migration if needed."},
+  {"speaker": "Priya", "content": "Notifications service should be ready for review by tomorrow. I'll request reviewers then."},
+  {"speaker": "Nikos", "content": "Great. Action items: I send Mike credentials by 10, Sarah tests rollback by Thursday, Tom resolves or quarantines the flaky test today. Anything else?"},
+  {"speaker": "Mike", "content": "Nothing else from me. Thanks all."}
+]

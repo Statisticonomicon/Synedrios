@@ -1,0 +1,22 @@
+# Synedrios runtime dependencies — top-level, human-edited.
+#
+# Compile the fully-pinned, hash-locked requirements.txt from this file with:
+#   pip-compile --generate-hashes --output-file=requirements.txt requirements.in
+#
+# All permissive licences (MIT / BSD / Apache-2.0). No copyleft.
+
+slack-bolt>=1.20.0
+aiohttp>=3.14.3        # required by slack-bolt's async socket-mode handler;
+                       # >=3.14.3 is a security floor (PYSEC-2026-3545/3546/3547)
+httpx>=0.27.0
+pydantic>=2.10.0
+pyyaml>=6.0.2
+fastapi>=0.115.0
+uvicorn>=0.32.0
+jinja2>=3.1.4
+sqlalchemy>=2.0.36
+alembic>=1.14.0
+
+# Transitive-dependency security floor (kept green by the pip-audit CI job).
+# starlette arrives via fastapi; <1.3.1 is affected by PYSEC-2026-248/249.
+starlette>=1.3.1

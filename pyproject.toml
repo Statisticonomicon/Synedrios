@@ -1,0 +1,24 @@
+# Tooling configuration for Synedrios. Packaging/build config is intentionally
+# omitted — the app ships as a Docker image, not a PyPI package. pytest config
+# lives in pytest.ini (the source of truth CI uses).
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# pycodestyle (E), pyflakes (F), and import sorting (I). Kept deliberately
+# conservative for the first pre-commit; the set can be widened over time.
+select = ["E", "F", "I"]
+ignore = [
+    "E501",  # line length is handled by the formatter, not flagged as an error
+]
+
+[tool.mypy]
+python_version = "3.12"
+plugins = ["pydantic.mypy"]
+ignore_missing_imports = true
+# Pragmatic baseline for Phase 1 — tightened over time, not all at once.
+check_untyped_defs = true
+warn_unused_ignores = true
+exclude = ["tests/"]

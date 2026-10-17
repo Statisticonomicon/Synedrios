@@ -1,0 +1,7 @@
+[
+  {"speaker": "Dana", "content": "Just to be clear, our API rate limit is 100 requests per second — that's the hard cap the platform team gave us."},
+  {"speaker": "Ken", "content": "Good, 100 per second. That gives us plenty of headroom for the mobile rollout."},
+  {"speaker": "Dana", "content": "Right, we can size the client retry logic against that ceiling."},
+  {"speaker": "Ken", "content": "I'll note it in the rollout plan then."},
+  {"speaker": "Dana", "content": "Actually, correction — the API rate limit is only 20 requests per second. There is no headroom at all for the mobile rollout."}
+]

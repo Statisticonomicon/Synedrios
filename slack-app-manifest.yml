@@ -1,0 +1,55 @@
+# Synedrios Slack App Manifest
+#
+# Create the app at https://api.slack.com/apps → Create New App → From a
+# manifest → pick the workspace → paste this file. Full instructions, including
+# the two tokens you need afterwards, are in docs/slack-setup.md.
+#
+# Socket Mode is used deliberately: the bot opens an outbound WebSocket to
+# Slack, so no inbound port, no public URL, and no reverse proxy are needed,
+# and the container can sit inside the customer's perimeter.
+display_information:
+  name: Synedrios
+  description: An AI meeting participant with configurable roles.
+  long_description: >
+    Synedrios joins a Slack channel as a meeting participant with a defined
+    role — secretary, technical advisor, facilitator, silent observer, or
+    coach. Each role decides when it may speak, what kinds of contribution it
+    may make, and which documents it produces after the meeting. It never
+    escalates its own initiative level mid-meeting.
+  background_color: "#2c3e50"
+
+features:
+  bot_user:
+    display_name: Synedrios
+    always_online: true
+
+oauth_config:
+  scopes:
+    bot:
+      # Receive @-mentions, which carry every command.
+      - app_mentions:read
+      # Read messages in public and private channels the bot is invited to.
+      # This is the meeting transcript; without it there is nothing to work on.
+      - channels:history
+      - groups:history
+      # List the channels the bot belongs to (used by tools/preflight.py).
+      - channels:read
+      - groups:read
+      # Post contributions and post-meeting documents.
+      - chat:write
+      # Resolve user ids to display names. Message events do not reliably
+      # carry a profile, and a transcript of raw ids produces notes whose
+      # action items are all owned by "U08KX3L4Q2".
+      - users:read
+
+settings:
+  event_subscriptions:
+    bot_events:
+      - app_mention
+      - message.channels
+      - message.groups
+  interactivity:
+    is_enabled: false
+  org_deploy_enabled: false
+  socket_mode_enabled: true
+  token_rotation_enabled: false

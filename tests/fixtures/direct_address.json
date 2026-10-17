@@ -1,0 +1,12 @@
+[
+  {"speaker": "Nikos", "content": "Let's get started on the API design review."},
+  {"speaker": "Sarah", "content": "I think we should version the API in the URL path."},
+  {"speaker": "Nikos", "content": "Synedrios, what's the trade-off between URL versioning and header versioning?"},
+  {"speaker": "Mike", "content": "Before that — @Synedrios can you also note that as an open decision?"},
+  {"speaker": "Sarah", "content": "Honestly I'm not sure which approach is more common in practice."},
+  {"speaker": "Nikos", "content": "Does anyone know offhand what GitHub's API uses?"},
+  {"speaker": "Mike", "content": "Synedrios, can you summarise where we've landed so far?"},
+  {"speaker": "Sarah", "content": "Let's move on to authentication once that's captured."},
+  {"speaker": "Nikos", "content": "Good. I think we lean URL versioning for discoverability."},
+  {"speaker": "Mike", "content": "Agreed. Let's lock that in."}
+]
